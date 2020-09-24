@@ -15,9 +15,12 @@
 
 
 
-const validator = require("validator");
+// const validator = require("validator");
 
-console.log(validator.isEmail("t@t.co"));
+// console.log(validator.isEmail("t@t.co"));
 
-console.log(validator.isURL("g.co"));
+// console.log(validator.isURL("g.co"));
 
+const chalk = require("chalk");
+
+console.log(chalk.green("Success!"));
