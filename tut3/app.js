@@ -23,4 +23,4 @@
 
 const chalk = require("chalk");
 
-console.log(chalk.green("Success!"));
+console.log(chalk.blue.inverse.bold("Success!"));
