@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  first:
+    build: .
+    ports:
+      - "8112:8112"
+    volumes:
+      - .:/zrtio
