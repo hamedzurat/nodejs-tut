@@ -50,8 +50,20 @@ const rmNote = (title) => {
     
 }
 
+const listNotes = () => {
+    var notes = loadNote();
+
+    console.log(chalk.blue('listing....'));
+    
+    notes.forEach(note => {
+        console.log(note.title);
+    });
+
+}
+
 
 module.exports = {
     addNote: addNote,
-    rmNote: rmNote
+    rmNote: rmNote,
+    listNotes: listNotes
 }

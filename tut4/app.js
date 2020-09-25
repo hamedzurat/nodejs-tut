@@ -1,7 +1,7 @@
 const chalk = require("chalk");
 const yargs = require("yargs");
 const note  = require('./note.js');
-const { addNote, rmNote } = require("./note.js");
+const { addNote, rmNote,listNotes } = require("./note.js");
 const { argv } = require("yargs");
 
 yargs.command({
@@ -43,7 +43,7 @@ yargs.command({
     command: 'list',
     describe: 'for listing file',
     handler(){
-        console.log('listing....');
+        listNotes();
     }
 });
 
