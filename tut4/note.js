@@ -2,12 +2,10 @@ const fs = require('fs');
 const { default: chalk } = require('chalk');
 
 
-const addNote = function(title,body){
+const addNote = (title,body) => {
     var notes = loadNote();
 
-    const duplicate = notes.filter(function(notes){
-        return notes.title === title;
-    })
+    const duplicate = notes.filter((notes) => notes.title === title)
 
     if (duplicate.length === 0){
         console.log('adding new notes');
@@ -22,7 +20,7 @@ const addNote = function(title,body){
     saveNote(notes);
 }
 
-const loadNote = function(title){
+const loadNote = (title) => {
     console.log('loading notes');
     try {
         var notes = fs.readFileSync('notes.json');
@@ -32,18 +30,15 @@ const loadNote = function(title){
     }
 }
 
-const saveNote = function(notes){
+const saveNote = (notes) => {
     fs.writeFileSync('notes.json',JSON.stringify(notes));
     console.log('saving notes');
 }
 
-const rmNote = function(title){
+const rmNote = (title) => {
     var notes = loadNote();
 
-    const tokeep = notes.filter(function(notes){
-
-        return notes.title !== title;
-    })
+    const tokeep = notes.filter((notes) => notes.title !== title)
 
     if(tokeep.length < notes.length){
         console.log(chalk.green.inverse('done'));

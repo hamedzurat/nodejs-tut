@@ -19,7 +19,7 @@ yargs.command({
             type: 'string'
         }
     },
-    handler: function(argv){
+    handler(argv){
         addNote(argv.title,argv.body);
     }
 });
@@ -34,7 +34,7 @@ yargs.command({
             type: 'string'
         }
     },
-    handler: function(){
+    handler(){
         rmNote(argv.title);
     }
 });
@@ -42,7 +42,7 @@ yargs.command({
 yargs.command({
     command: 'list',
     describe: 'for listing file',
-    handler: function(){
+    handler(){
         console.log('listing....');
     }
 });
@@ -50,7 +50,7 @@ yargs.command({
 yargs.command({
     command: 'read',
     describe: 'for reading file',
-    handler: function(){
+    handler(){
         console.log('reading....');
     }
 });
