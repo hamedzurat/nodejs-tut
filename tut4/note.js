@@ -5,9 +5,7 @@ const { default: chalk } = require('chalk');
 const addNote = (title,body) => {
     var notes = loadNote();
 
-    const duplicate = notes.filter((notes) => notes.title === title)
-
-    if (duplicate.length === 0){
+    if (!notes.find((notes) => notes.title === title)){
         console.log('adding new notes');
         notes.push({
             title: title,
@@ -54,16 +52,28 @@ const listNotes = () => {
     var notes = loadNote();
 
     console.log(chalk.blue('listing....'));
-    
+
     notes.forEach(note => {
         console.log(note.title);
     });
 
 }
 
+const readNote = (title) => {
+    var notes = loadNote();
+
+    const index = notes.find((notes) => notes.title === title);
+
+    if (index){
+        console.log(index.body);
+    }else{
+        console.log(chalk.red.inverse('404'));
+    }
+}
 
 module.exports = {
     addNote: addNote,
     rmNote: rmNote,
-    listNotes: listNotes
+    listNotes: listNotes,
+    readNote: readNote
 }
