@@ -1,6 +1,8 @@
 const chalk = require("chalk");
 const yargs = require("yargs");
-
+const note  = require('./note.js');
+const { addNote, rmNote } = require("./note.js");
+const { argv } = require("yargs");
 
 yargs.command({
     command: 'add',
@@ -18,15 +20,22 @@ yargs.command({
         }
     },
     handler: function(argv){
-        console.log('adding: '+ argv.title + "\n" + argv.body);
+        addNote(argv.title,argv.body);
     }
 });
 
 yargs.command({
     command: 'rm',
     describe: 'for removing file',
+    builder:{
+        title:{
+            describe: 'title of the note',
+            demandOption: true,
+            type: 'string'
+        }
+    },
     handler: function(){
-        console.log('removing....');
+        rmNote(argv.title);
     }
 });
 
