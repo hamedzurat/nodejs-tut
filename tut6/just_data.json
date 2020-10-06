@@ -1,0 +1,80 @@
+{
+    "statusCode": 200,
+    "body": {
+        "coord": {
+            "lon": 89.57,
+            "lat": 22.81
+        },
+        "weather": [
+            {
+                "id": 502,
+                "main": "Rain",
+                "description": "heavy intensity rain",
+                "icon": "10n"
+            }
+        ],
+        "base": "stations",
+        "main": {
+            "temp": 300.21,
+            "feels_like": 304.64,
+            "temp_min": 300.21,
+            "temp_max": 300.21,
+            "pressure": 1003,
+            "humidity": 90,
+            "sea_level": 1003,
+            "grnd_level": 1002
+        },
+        "visibility": 10000,
+        "wind": {
+            "speed": 3.09,
+            "deg": 183
+        },
+        "rain": {
+            "1h": 7.3629999999999995
+        },
+        "clouds": {
+            "all": 96
+        },
+        "dt": 1601128660,
+        "sys": {
+            "country": "BD",
+            "sunrise": 1601077897,
+            "sunset": 1601121263
+        },
+        "timezone": 21600,
+        "id": 1336135,
+        "name": "Khulna",
+        "cod": 200
+    },
+    "headers": {
+        "server": "openresty",
+        "date": "Sat, 26 Sep 2020 14:00:34 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "524",
+        "connection": "close",
+        "x-cache-key": "/data/2.5/weather?q=khulna",
+        "access-control-allow-origin": "*",
+        "access-control-allow-credentials": "true",
+        "access-control-allow-methods": "GET, POST"
+    },
+    "request": {
+        "uri": {
+            "protocol": "https:",
+            "slashes": true,
+            "auth": null,
+            "host": "api.openweathermap.org",
+            "port": 443,
+            "hostname": "api.openweathermap.org",
+            "hash": null,
+            "search": "?q=khulna&appid=e6f4e8cae67a56b70ceb4f07be2ef89c",
+            "query": "q=khulna&appid=e6f4e8cae67a56b70ceb4f07be2ef89c",
+            "pathname": "/data/2.5/weather",
+            "path": "/data/2.5/weather?q=khulna&appid=e6f4e8cae67a56b70ceb4f07be2ef89c",
+            "href": "https://api.openweathermap.org/data/2.5/weather?q=khulna&appid=e6f4e8cae67a56b70ceb4f07be2ef89c"
+        },
+        "method": "GET",
+        "headers": {
+            "accept": "application/json"
+        }
+    }
+}
