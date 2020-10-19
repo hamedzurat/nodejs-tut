@@ -47,13 +47,36 @@ app.get('/dy_help', (req, res) => {
 // });
 
 app.get('/weather', (req, res) => {
+    if(!req.query.address){
+        return res.send({
+            error: 404,
+            msg: "no address found bro"
+        });
+    }
+
     //res.send("<h1>todays weather is</h1>");
+    var forecast = "its gud in " + req.query.address;
+
     res.send({
-        location: "khulna",
-        forecast: "best"
+        location: req.query.address,
+        forecast: forecast
     })
     console.log('serverd a weather req');
 });
+
+// app.get('/products', (req,res) => {
+//     if(!req.query.location){
+//         return res.send({
+//             error: "no location data found"
+//         });
+//     };
+
+//     //console.log(req.query.location);
+//     res.send({
+//         products : []
+//     });
+// });
+
 
 app.get('/dy_help/*', (req,res) => {
     //res.send("this help page dont exist in the first place");
